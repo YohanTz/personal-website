@@ -13,10 +13,10 @@ const App = () => {
         <div className="p-10">
           <Switch>
             <Route exact path="/">
-              <About/>
+              <About />
             </Route>
             <Route exact path="/resume">
-              <Resume/>
+              <Resume />
             </Route>
           </Switch>
         </div>
