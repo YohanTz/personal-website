@@ -1,23 +1,15 @@
-import React, { useState } from 'react';
-import { useTransition, animated } from 'react-spring'
+import React from 'react';
+import MainAnimation from '../Components/MainAnimation';
 
 const Resume = () => {
-    const [show, setShow] = useState(true)
-    const transitions = useTransition(show, null, {
-        from: { opacity: -5, transform: 'translateY(-20%)' },
-        enter: { opacity: 1, transform: 'translateX(0%)' },
-        leave: { opacity: -5, transform: 'translate(-20%)' },
-    })
     return (
         <div className="p-3">
-            {
-                transitions.map(({ item, key, props }) =>
-                    item &&
-                    <animated.div key={key} style={props}>
-                        <h1 className="font-bold">😬 My resume is coming...</h1>
-                    </animated.div>
-                )
-            }
+            <MainAnimation>
+                <h1 className="font-bold">
+                    <span role="img" aria-label="Grimacing Face">😬 </span>
+                    My resume is coming...
+                    </h1>
+            </MainAnimation>
         </div>
     )
 }
