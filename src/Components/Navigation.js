@@ -1,22 +1,25 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const Navigation = () => {
     return (
         <nav className="flex">
-            <Link
+            <NavLink
+                exact
                 to="/"
-                className="text-black no-underline m-5"
+                className="text-black no-underline m-5 hover:text-black"
+                activeClassName="font-bold"
             >
                 About
-            </Link>
+            </NavLink>
 
-            <Link
+            <NavLink
                 to="/resume"
-                className="text-black no-underline m-5"
+                className="text-black no-underline m-5 hover:text-black"
+                activeClassName="font-bold"
             >
                 Resume
-            </Link>
+            </NavLink>
         </nav>
     )
 }

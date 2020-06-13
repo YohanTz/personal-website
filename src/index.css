@@ -1,7 +1,7 @@
 @tailwind base;
 
 h1 {
-    @apply text-5xl;
+    @apply text-6xl;
   }
   h2 {
     @apply text-4xl;

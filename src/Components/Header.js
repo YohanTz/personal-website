@@ -5,12 +5,12 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
-        <header className="pt-10 p-5 flex justify-between items-center">
+        <header className="w-11/12 mt-8 mb-5 m-auto flex justify-between items-center">
             <div className="flex justify-between items-center">
                 <Link to="/">
-                    <img className="img m-5" alt="Yohan tancrez logo" src={Logo} style={{ height: '3em' }} />
+                    <img className="img mr-8" alt="Yohan Tancrez logo" src={Logo} style={{ height: '3em' }} />
                 </Link>
-                <h3 >
+                <h3 className="invisible sm:visible md:visible lg:visible xl:visible">
                     Tancrez Yohan
                 </h3>
             </div>
