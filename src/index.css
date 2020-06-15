@@ -13,6 +13,16 @@ h1 {
     @apply text-blue-600 underline;
   }
 
+ .portrait {
+   height: 20em;
+   width: 20em;
+ }
+
+ .test {
+   min-width: 20em;
+   min-height: 20em;
+ }
+
 @tailwind components;
 
 @tailwind utilities;

@@ -7,10 +7,10 @@ import Resume from './Views/Resume';
 
 const App = () => {
   return (
-    <div className="relative min-h-screen pb-3">
+    <div className="w-10/12 m-auto relative min-h-screen pb-3">
       <Router>
         <Header />
-        <div className="w-11/12 m-auto">
+        <div className="">
           <Switch>
             <Route exact path="/">
               <About />

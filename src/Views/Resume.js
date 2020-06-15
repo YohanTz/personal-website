@@ -6,8 +6,8 @@ const Resume = () => {
         <MainAnimation>
             <h1 className="font-bold">
                 <span role="img" aria-label="Grimacing Face">😬 </span>
-                    My resume is coming...
-                    </h1>
+                My resume is coming...
+            </h1>
         </MainAnimation>
     )
 }

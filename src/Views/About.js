@@ -1,6 +1,6 @@
 import React from 'react';
 import MainAnimation from '../Components/MainAnimation';
-
+import Portrait from '../Ty.jpg';
 const Home = () => {
     return (
         <MainAnimation>
@@ -19,11 +19,16 @@ const Home = () => {
                     </h1>
                 </div>
             </div>
-            <div className="w-1/2">
-                <p className="my-8 text-2xl">
-                    I'm currently a Computer Engineering student at Epita,
-                    passionate about clean code.
-                </p>
+            <div className="flex flex-wrap justify-between">
+                <div className="flex-1">
+                    <p className="self-stretch my-8 text-2xl">
+                        I'm currently a Computer Engineering student at Epita,
+                        passionate about clean code.
+                    </p>
+                </div>
+                <div className="test flex flex-1 self-center justify-center portrait">
+                    <img className="portrait" src={Portrait}></img>
+                </div>
             </div>
 
         </MainAnimation>
