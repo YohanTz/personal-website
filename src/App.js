@@ -7,7 +7,7 @@ import Resume from './Views/Resume';
 
 const App = () => {
   return (
-    <div className="w-10/12 m-auto relative min-h-screen pb-3">
+    <div className="w-11/12 md:w-10/12 m-auto relative min-h-screen">
       <Router>
         <Header />
         <div className="">

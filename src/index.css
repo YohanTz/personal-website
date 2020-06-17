@@ -1,27 +1,107 @@
 @tailwind base;
 
-h1 {
-    @apply text-6xl;
-  }
-  h2 {
-    @apply text-4xl;
-  }
-  h3 {
-    @apply text-3xl;
-  }
-  a {
-    @apply text-blue-600 underline;
-  }
+a {
+  @apply text-blue-600 underline;
+}
+html {
+  margin-top: 3vw;
+}
 
- .portrait {
+.portrait {
    height: 20em;
    width: 20em;
- }
+}
 
- .test {
+.imgDiv {
    min-width: 20em;
    min-height: 20em;
- }
+}
+
+.activeNav {
+  color: black !important;
+  font-weight: 500
+}
+
+/*.mainTitle {
+  line-height: 3em;
+}*/
+
+h1 {
+  font-size: 36px;    
+  line-height: inherit;
+}
+h2 {
+  font-size: 36px;    
+  line-height: inherit;
+}
+h3 {
+  font-size: 18px;    
+  line-height: inherit;
+}
+h4 {
+  font-size: 18px;    
+  line-height: inherit;
+}
+h5 {
+  font-size: 16px;    
+  line-height: inherit;
+}
+h6 {
+  font-size: 14px;    
+  line-height: inherit;
+}
+p, li {
+  font-size: 16px;
+  line-height: 150%;
+}
+
+@media screen and (min-width: 450px) {
+  h1 {
+      font-size: calc(36px + 36 * ((100vw - 320px) / 680));
+  }
+  h2 {
+      font-size: calc(30px + 30 * ((100vw - 320px) / (680)));
+  }
+  h3 {
+      font-size: calc(18px + 18 * ((100vw - 320px) / (680)));
+  }
+  h4 {
+      font-size: calc(18px + 6 * ((100vw - 320px) / (680)));
+  }
+  h5 {
+      font-size: calc(16px + 4 * ((100vw - 320px) / (680)));
+  }
+  h6 {
+      font-size: calc(14px + 2 * ((100vw - 320px) / (680)));
+  }
+  p, li {
+      font-size: calc(16px + 5 * ((100vw - 320px) / (680)));
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  h1 {
+      font-size: 72px;
+  }
+  h2 {
+      font-size: 60px;
+  }
+  h3 {
+      font-size: 36px;
+  }
+  h4 {
+      font-size: 24px;
+  }
+  h5 {
+      font-size: 20px;
+  }
+  h6 {
+      font-size: 16px;
+  }
+  p, li {
+      font-size: 22px;
+  }
+}
 
 @tailwind components;
 

@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
-        <header className="mt-8 mb-5 m-auto flex justify-between items-center">
-            <div className="flex justify-between items-center">
+        <header className="mb-8 m-auto flex sm:justify-between items-center">
+            <div className="flex flex-wrap sm:flex-no-wrap justify-between items-center">
                 <Link to="/">
                     <img className="mr-8" alt="Yohan Tancrez logo" src={Logo} style={{ height: '3em' }} />
                 </Link>

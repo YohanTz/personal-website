@@ -7,19 +7,26 @@ const Navigation = () => {
             <NavLink
                 exact
                 to="/"
-                className="text-black no-underline m-5 hover:text-black"
-                activeClassName="font-bold"
+                className="text-xl text-gray-600 no-underline hover:text-black"
+                activeClassName="activeNav"
             >
                 About
             </NavLink>
 
             <NavLink
                 to="/resume"
-                className="text-black no-underline m-5 hover:text-black"
-                activeClassName="font-bold"
+                className="text-xl text-gray-600 no-underline ml-16 hover:text-black"
+                activeClassName="activeNav"
             >
                 Resume
             </NavLink>
+            {/*<NavLink
+                to="/hobbies"
+                className="text-xl text-gray-600 no-underline ml-16 hover:text-black"
+                activeClassName="activeNav"
+            >
+                Hobbies
+            </NavLink>*/}
         </nav>
     )
 }
