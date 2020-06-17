@@ -35,7 +35,7 @@ const Home = () => {
                     starting from September.
                 </p>
                 <div className="m-auto imgDiv flex flex-1 self-center justify-center portrait">
-                    <img className="portrait" src={Portrait}></img>
+                    <img className="portrait" src={Portrait} alt="Yohan Tancrez portrait"></img>
                 </div>
             </div>
 
