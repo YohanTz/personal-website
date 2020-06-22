@@ -1,10 +1,44 @@
 @tailwind base;
 
-a {
-  @apply text-blue-600 underline;
+:root {
+  --primary-color: #ff5900;
+  --secondary-color: #818cab;
+  --font-color: #ffffff;
+  --bg-color: #000;
 }
+
+[data-theme="light"] {
+  --primary-color: #ff5900;
+  --secondary-color: #536390;
+  --font-color: #424242;
+  --bg-color: #fff;
+}
+
+@import url(https://fonts.googleapis.com/css?family=MuseoModerno:300);
+
+html, body {
+  cursor: none;
+}
+
 html {
-  margin-top: 3vw;
+  font-family: 'MuseoModerno', 'Open Sans', sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--font-color);
+}
+
+span {
+  color: var(--primary-color)
+}
+
+.icons {
+  color: var(--font-color)
+}
+
+.header {
+  padding-top: 2vw;
 }
 
 .portrait {
@@ -22,57 +56,63 @@ html {
   font-weight: 500
 }
 
-/*.mainTitle {
-  line-height: 3em;
-}*/
+.home {
+  height: 100vh;
+}
 
 h1 {
-  font-size: 36px;    
-  line-height: inherit;
+  margin: 0;
+  font-size: 60px;    
+  line-height: 110px;
 }
 h2 {
-  font-size: 36px;    
-  line-height: inherit;
+  margin: 0;
+  font-size: 25px;    
+  line-height: 55px;
 }
 h3 {
+  margin: 0;
   font-size: 18px;    
-  line-height: inherit;
-}
-h4 {
-  font-size: 18px;    
-  line-height: inherit;
-}
-h5 {
-  font-size: 16px;    
-  line-height: inherit;
-}
-h6 {
-  font-size: 14px;    
-  line-height: inherit;
+  line-height: 55px;
 }
 p, li {
   font-size: 16px;
-  line-height: 150%;
+}
+
+.cursor-dot,
+.cursor-dot-outline {
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s ease-in-out,
+                transform 0.3s ease-in-out;
+}
+
+.cursor-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--primary-color);
+}
+
+.cursor-dot-outline {
+    width: 40px;
+    height: 40px;
+    background-color: #ff590040; 
 }
 
 @media screen and (min-width: 450px) {
   h1 {
-      font-size: calc(36px + 36 * ((100vw - 320px) / 680));
+      font-size: calc(60px + 60 * ((100vw - 320px) / 680));
   }
   h2 {
-      font-size: calc(30px + 30 * ((100vw - 320px) / (680)));
+      font-size: calc(25px + 25 * ((100vw - 320px) / (680)));
   }
   h3 {
       font-size: calc(18px + 18 * ((100vw - 320px) / (680)));
-  }
-  h4 {
-      font-size: calc(18px + 6 * ((100vw - 320px) / (680)));
-  }
-  h5 {
-      font-size: calc(16px + 4 * ((100vw - 320px) / (680)));
-  }
-  h6 {
-      font-size: calc(14px + 2 * ((100vw - 320px) / (680)));
   }
   p, li {
       font-size: calc(16px + 5 * ((100vw - 320px) / (680)));
@@ -81,25 +121,16 @@ p, li {
 
 @media screen and (min-width: 1000px) {
   h1 {
-      font-size: 72px;
+      font-size: 90px;
   }
   h2 {
-      font-size: 60px;
+      font-size: 40px;
   }
   h3 {
-      font-size: 36px;
-  }
-  h4 {
-      font-size: 24px;
-  }
-  h5 {
-      font-size: 20px;
-  }
-  h6 {
-      font-size: 16px;
+      font-size: 18px;
   }
   p, li {
-      font-size: 22px;
+      font-size: 18px;
   }
 }
 

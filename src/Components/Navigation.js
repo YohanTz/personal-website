@@ -10,7 +10,7 @@ const Navigation = () => {
                 className="text-xl text-gray-600 no-underline hover:text-black"
                 activeClassName="activeNav"
             >
-                About
+                {'<About/>'}
             </NavLink>
 
             <NavLink
@@ -18,7 +18,7 @@ const Navigation = () => {
                 className="text-xl text-gray-600 no-underline ml-16 hover:text-black"
                 activeClassName="activeNav"
             >
-                Resume
+                {'<Resume/>'}
             </NavLink>
             {/*<NavLink
                 to="/hobbies"

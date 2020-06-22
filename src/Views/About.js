@@ -1,45 +1,20 @@
 import React from 'react';
 import MainAnimation from '../Components/MainAnimation';
-import Portrait from '../Ty.jpg';
+import Header from './../Components/Header';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
+
 const Home = () => {
     return (
-        <MainAnimation>
-            <div className="mb-20 md:flex ">
-                <div className="md:pr-6">
-                    <h1 className="font-bold">
-                        <span role="img" aria-label="Waving Hand">👋🏽</span>
-                    </h1>
-                </div>
-                <div className="">
-                    <h1 className="font-bold mainTitle">
-                        Hey there,
-                    </h1>
-                    <h1 className="font-medium">
-                        It's nice to meet you.
-                    </h1>
-                </div>
-            </div>
-
-            <div className="md:flex flex-wrap justify-between">
-                <p className="self-center my-8 text-2xl flex-1">
-                    I'm Yohan, a Computer Engineering student @Epita,
-                    passionate about clean code.
-                    <br/>
-                    I'm currently looking for a 4 months internship in front-end engineering,
-                    starting from September.
-                    <br/>
-                    I'm Yohan, a Computer Engineering student @Epita,
-                    passionate about clean code.
-                    <br/>
-                    I'm currently looking for a 4 months internship in front-end engineering,
-                    starting from September.
-                </p>
-                <div className="m-auto imgDiv flex flex-1 self-center justify-center portrait">
-                    <img className="portrait" src={Portrait} alt="Yohan Tancrez portrait"></img>
-                </div>
-            </div>
-
-        </MainAnimation>
+        <section className="home flex flex-col justify-between" >
+            <Header />
+            <MainAnimation className="self-center flex flex-col align-stretch sm:items-center">
+                <h1>Hi !</h1>
+                <h2>My name is <span>Yohan Tancrez</span></h2>
+                <h3>I'm a computer engineering student <span>@Epita</span></h3>
+            </MainAnimation>
+            <FontAwesomeIcon className="self-center text-3xl icons mb-5" icon={faChevronDown} />
+        </section>
     )
 }
 
