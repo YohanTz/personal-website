@@ -20,13 +20,6 @@ const Navigation = () => {
             >
                 {'<Resume/>'}
             </NavLink>
-            {/*<NavLink
-                to="/hobbies"
-                className="text-xl text-gray-600 no-underline ml-16 hover:text-black"
-                activeClassName="activeNav"
-            >
-                Hobbies
-            </NavLink>*/}
         </nav>
     )
 }
