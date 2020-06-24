@@ -85,6 +85,10 @@ p, li {
   font-size: 16px;
 }
 
+/*
+ * Cursor styling
+ */
+
 .cursor-dot,
 .cursor-dot-outline {
     pointer-events: none;
