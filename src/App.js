@@ -1,7 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import About from './Views/About';
+import Home from './Views/Home';
 import Resume from './Views/Resume';
+import About from './Views/About'
 
 const App = () => {
   return (
@@ -10,7 +11,8 @@ const App = () => {
         <div>
           <Switch>
             <Route exact path="/">
-              <About />
+              <Home/>
+              <About/>
             </Route>
             <Route path="/resume">
               <Resume />
