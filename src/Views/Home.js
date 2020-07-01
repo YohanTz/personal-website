@@ -12,7 +12,7 @@ const Home = () => {
                 <h1>Hi !</h1>
                 <h2>My name is <span>Yohan Tancrez</span></h2>
                 <h3>
-                    I'm a computer engineering student 
+                    I'm a computer engineering student
                     <a
                         href="https://www.epita.fr/"
                         target="_blank"
@@ -22,9 +22,10 @@ const Home = () => {
                     </a>
                 </h3>
             </MainAnimation>
-            <a href="#about_section" className="self-center">
-                <FontAwesomeIcon className="text-3xl icons mb-5" icon={faChevronDown} />
-            </a>
+            <div className="self-center flex flex-col items-center">
+                Scroll Down!
+                <FontAwesomeIcon className="text-xl icons mb-5" icon={faChevronDown} />
+            </div>
         </section>
     )
 }

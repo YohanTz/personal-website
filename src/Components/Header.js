@@ -11,6 +11,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 const Header = () => {
     return (
         <header className="header flex justify-between items-center">
+            { /* TODO: Sticky + Transparent + Blur*/}
             <div className="flex flex-wrap justify-between items-center">
                 <Link to="/">
                     <img className="mr-8" alt="Yohan Tancrez logo" src={Logo} style={{ height: '3em' }} />
