@@ -3,7 +3,7 @@ import ScriptTag from 'react-script-tag';
 
 const DarkModeSlider = () => {
     return (
-        <div className="theme-switch-wrapper">
+        <div className="theme-switch-wrapper flex flex-wrap">
             <label className="theme-switch" htmlFor="checkbox">
                 <input type="checkbox" id="checkbox" />
                 <div className="slider round"></div>

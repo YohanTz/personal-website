@@ -1,8 +1,6 @@
 import React from 'react';
 import MainAnimation from '../Components/MainAnimation';
 import Header from '../Components/Header';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
 const Home = () => {
     return (
@@ -12,7 +10,7 @@ const Home = () => {
                 <h1>Hi !</h1>
                 <h2>My name is <span>Yohan Tancrez</span></h2>
                 <h3>
-                    I'm a computer engineering student
+                    Computer engineering student
                     <a
                         href="https://www.epita.fr/"
                         target="_blank"
@@ -22,9 +20,8 @@ const Home = () => {
                     </a>
                 </h3>
             </MainAnimation>
-            <div className="self-center flex flex-col items-center">
-                Scroll Down!
-                <FontAwesomeIcon className="text-xl icons mb-5" icon={faChevronDown} />
+            <div className="mb-5 relative self-center flex flex-col items-center">
+                <div className="mouse"></div>
             </div>
         </section>
     )

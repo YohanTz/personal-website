@@ -1,15 +1,15 @@
 @tailwind base;
 
 :root {
-  --primary-color: #7045af;
-  --secondary-color: #7045af60;
+  --primary-color: #fd346a;
+  --secondary-color: #FD346A70;
   --font-color: #ffffff;
-  --bg-color: #000;
+  --bg-color: #121212;
 }
 
 [data-theme="light"] {
-  --primary-color: #1287A8;
-  --secondary-color: #1287A860;
+  --primary-color: #FD346A;
+  --secondary-color: #FD346A70;
   --font-color: #424242;
   --bg-color: #fff;
 }
@@ -29,8 +29,8 @@ body {
   color: var(--font-color);
 
   transition:
-    color 0.5s ease,
-    background-color 0.5s ease
+    color 0.4s ease,
+    background-color 0.4s ease
 }
 
 span {
@@ -59,13 +59,21 @@ em {
 }
 
 .portrait {
-   height: 20em;
-   width: 20em;
+  height: 23em;
+  width: 23em;
+  border-radius: 100%;
+  box-shadow:
+  0 0 200px 1px var(--primary-color)
 }
 
 .imgDiv {
-   min-width: 20em;
-   min-height: 20em;
+   min-width: 23em;
+   min-height: 23em;
+   border-radius: 50%;
+}
+
+.logo {
+  fill: var(--font-color)
 }
 
 .activeNav {
@@ -94,6 +102,46 @@ h3 {
 }
 p, li {
   font-size: 16px;
+}
+
+/*
+ * Scroll Mouse
+ */
+
+ .mouse {
+  width: 30px;
+  height: 50px;
+  border: 2px solid var(--font-color);
+  border-radius: 60px;
+}
+
+.mouse::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  position: absolute;
+  background: var(--font-color);
+  margin-left: -3px;
+  top: 13px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  animation: mouse 2s cubic-bezier(0.65, -0.55, 0.25, 1.5) infinite;
+}
+
+@keyframes mouse {
+  0% {
+    opacity: 0;
+     transform: translateY(0) scale(0.5);
+  }
+  10% {
+    opacity: 1;
+    transform: scale(1)
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.5)
+  }
 }
 
 /*
@@ -128,6 +176,7 @@ p, li {
 /*
  * Dark mode Button Styling
  */ 
+
 .theme-switch-wrapper {
   display: flex;
   align-items: center;
@@ -135,9 +184,9 @@ p, li {
 }
 .theme-switch {
   display: inline-block;
-  height: 34px;
+  height: 28px;
   position: relative;
-  width: 60px;
+  width: 50px;
 }
 
 .theme-switch input {
@@ -157,13 +206,13 @@ p, li {
 
 .slider:before {
   background-color: #fff;
-  bottom: 4px;
+  bottom: 3px;
   content: "";
-  height: 26px;
-  left: 4px;
+  height: 22px;
+  left: 3px;
   position: absolute;
-  transition: .4s;
-  width: 26px;
+  transition: .3s;
+  width: 22px;
 }
 
 input:checked + .slider {
@@ -172,11 +221,11 @@ input:checked + .slider {
 
 input:checked + .slider:before {
   background-color: #000;
-  transform: translateX(26px);
+  transform: translateX(22px);
 }
 
 .slider.round {
-  border-radius: 34px;
+  border-radius: 28px;
 }
 
 .slider.round:before {
