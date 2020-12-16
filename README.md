@@ -4,8 +4,6 @@
 
 This is the GitHub repository for my personal Website, made with Gatsby and deployed with Netlify.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 <p align="center">
   <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter">
     <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />

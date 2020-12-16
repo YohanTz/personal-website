@@ -2,7 +2,7 @@
   "name": "gatsby-portfolio",
   "version": "1.0.0",
   "private": true,
-  "description": "My Gatsby site",
+  "description": "My Gatsby portfolio website",
   "author": "Yohan Tancrez",
   "keywords": [
     "gatsby"
@@ -17,7 +17,9 @@
   "license": "0BSD",
   "dependencies": {
     "gatsby": "^2.26.1",
+    "gatsby-plugin-styled-components": "^3.7.0",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "styled-components": "^5.2.1"
   }
 }
