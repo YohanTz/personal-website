@@ -12,6 +12,7 @@ const CursorContainer = styled.div`
   pointer-events: none;
   position: fixed;
   width: 36px;
+  transition: 0.09s;
 `;
 
 const CursorDot = styled.div`
@@ -24,14 +25,31 @@ const CursorDot = styled.div`
 const Cursor = () => {
   const cursorRef = useRef(null);
 
-  useEffect(() =>
-    document.addEventListener('mousemove', (event) => {
-      const { clientX, clientY } = event;
-      const mouseX = clientX - cursorRef.current.clientWidth / 2 - 1;
-      const mouseY = clientY - cursorRef.current.clientHeight / 2 - 1;
-      cursorRef.current.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
-    }),
-  );
+  const handleMouseMove = (event) => {
+    const { clientX, clientY } = event;
+    const mouseX = clientX - cursorRef.current.clientWidth / 2 - 1;
+    const mouseY = clientY - cursorRef.current.clientHeight / 2 - 1;
+    cursorRef.current.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
+  };
+
+  const handleMouseEnter = () => {
+    cursorRef.current.style.opacity = 1;
+  };
+
+  const handleMouseLeave = () => {
+    cursorRef.current.style.opacity = 0;
+  };
+
+  useEffect(() => {
+    document.addEventListener('mousemove', handleMouseMove);
+    document.addEventListener('mouseenter', handleMouseEnter);
+    document.addEventListener('mouseleave', handleMouseLeave);
+    return () => [
+      document.removeEventListener('mousemove', handleMouseMove),
+      document.removeEventListener('mouseenter', handleMouseEnter),
+      document.removeEventListener('mouseleave', handleMouseLeave),
+    ];
+  }, []);
 
   return (
     <CursorContainer ref={cursorRef}>

@@ -8,7 +8,7 @@ import Topbar from './Topbar';
 const GlobalStyle = createGlobalStyle`
   :root {
     // FONT
-    --font-family: sans-serif;
+    --font-family: Roboto;
 
     // COLORS
     --bg-color: #000;

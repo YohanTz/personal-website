@@ -17,6 +17,7 @@
   "license": "0BSD",
   "dependencies": {
     "gatsby": "^2.26.1",
+    "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-styled-components": "^3.7.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
