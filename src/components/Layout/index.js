@@ -2,6 +2,7 @@ import React from 'react';
 import { createGlobalStyle } from 'styled-components';
 
 import Cursor from 'components/Cursor';
+import Navbar from 'components/Navbar';
 import Topbar from './Topbar';
 
 const GlobalStyle = createGlobalStyle`
@@ -31,6 +32,7 @@ const Layout = ({ children }) => {
       <GlobalStyle />
       <Cursor />
       <Topbar />
+      <Navbar />
       {children}
     </>
   );
