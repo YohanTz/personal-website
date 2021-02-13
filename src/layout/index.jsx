@@ -1,10 +1,7 @@
 import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 
-import ScrollIndicator from 'components/ScrollIndicator';
-import Cursor from 'components/Cursor';
-import Navbar from 'components/Navbar';
-import Topbar from './Topbar';
+import { Cursor, Navbar, ScrollIndicator, Topbar } from './components';
 
 const GlobalStyle = createGlobalStyle`
   :root {
