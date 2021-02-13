@@ -1,43 +1,53 @@
 import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 
-const CursorContainer = styled.div`
-  align-items: center;
+const CursorOutline = styled.div`
+  position: fixed;
   border-radius: 50%;
   border: 1px solid white;
-  display: flex;
   height: 36px;
-  justify-content: center;
-  overflow: hidden;
   pointer-events: none;
-  position: fixed;
   width: 36px;
   transition: 0.09s;
+  opacity: 0;
+  @media (hover: none) and (pointer: coarse) {
+    visibility: hidden;
+  }
 `;
-
 const CursorDot = styled.div`
-  height: 4px;
-  width: 4px;
+  position: fixed;
+  height: 3px;
+  width: 3px;
   background-color: white;
   border-radius: 50%;
+  top: 18px;
+  left: 18px;
+  opacity: 0;
+  @media (hover: none) and (pointer: coarse) {
+    visibility: hidden;
+  }
 `;
 
 const Cursor = () => {
-  const cursorRef = useRef(null);
+  const cursorOutlineRef = useRef(null);
+  const cursorDotRef = useRef(null);
 
   const handleMouseMove = (event) => {
     const { clientX, clientY } = event;
-    const mouseX = clientX - cursorRef.current.clientWidth / 2 - 1;
-    const mouseY = clientY - cursorRef.current.clientHeight / 2 - 1;
-    cursorRef.current.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
+    const mouseX = clientX - cursorOutlineRef.current.clientWidth / 2;
+    const mouseY = clientY - cursorOutlineRef.current.clientHeight / 2;
+    cursorOutlineRef.current.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
+    cursorDotRef.current.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
   };
 
   const handleMouseEnter = () => {
-    cursorRef.current.style.opacity = 1;
+    cursorOutlineRef.current.style.opacity = 1;
+    cursorDotRef.current.style.opacity = 1;
   };
 
   const handleMouseLeave = () => {
-    cursorRef.current.style.opacity = 0;
+    cursorOutlineRef.current.style.opacity = 0;
+    cursorDotRef.current.style.opacity = 0;
   };
 
   useEffect(() => {
@@ -52,9 +62,10 @@ const Cursor = () => {
   }, []);
 
   return (
-    <CursorContainer ref={cursorRef}>
-      <CursorDot />
-    </CursorContainer>
+    <>
+      <CursorOutline ref={cursorOutlineRef} />
+      <CursorDot ref={cursorDotRef} />
+    </>
   );
 };
 
