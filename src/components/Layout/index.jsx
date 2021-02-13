@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 
-import ScrollIndication from 'components/ScrollIndicator';
+import ScrollIndicator from 'components/ScrollIndicator';
 import Cursor from 'components/Cursor';
 import Navbar from 'components/Navbar';
 import Topbar from './Topbar';
@@ -15,6 +15,7 @@ const GlobalStyle = createGlobalStyle`
     --bg-color: #000;
     --font-color: #fff;
     --primary-color: #FFFF8B;
+    --primary-selection-color: #FFFF8BC0;
 
     // MARGIN
     --margin-y: 15px;
@@ -31,6 +32,11 @@ const GlobalStyle = createGlobalStyle`
   * {
     cursor: none;
   }
+
+  ::selection {
+    background-color: var(--primary-selection-color);
+    color: black;
+  }
 `;
 
 const ChildrenContainer = styled.div`
@@ -45,7 +51,7 @@ const Layout = ({ children }) => {
       <Cursor />
       <Topbar />
       <Navbar />
-      <ScrollIndication />
+      <ScrollIndicator />
       <ChildrenContainer>{children}</ChildrenContainer>
     </>
   );

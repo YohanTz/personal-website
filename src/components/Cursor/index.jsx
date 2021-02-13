@@ -23,9 +23,6 @@ const CursorDot = styled.div`
   top: 18px;
   left: 18px;
   opacity: 0;
-  @media (hover: none) and (pointer: coarse) {
-    visibility: hidden;
-  }
 `;
 
 const Cursor = () => {

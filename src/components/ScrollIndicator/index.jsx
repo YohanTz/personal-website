@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 const ScrollIndicatorContainer = styled.div`
@@ -10,6 +10,8 @@ const ScrollIndicatorContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  opacity: ${(props) => (props.scrolled ? '0' : '1')};
+  transition: opacity 0.3s;
 `;
 
 const ScrollIndicatorText = styled.div`
@@ -58,8 +60,19 @@ const ScrollIndicatorBar = styled.div`
 `;
 
 const ScrollIndicator = () => {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    window.onscroll = () => {
+      if (window.pageYOffset > 0) setScrolled(true);
+      else setScrolled(false);
+    };
+  }, []);
+
+  console.log(scrolled);
+
   return (
-    <ScrollIndicatorContainer>
+    <ScrollIndicatorContainer scrolled={scrolled}>
       <ScrollIndicatorText>Scroll</ScrollIndicatorText>
       <ScrollIndicatorBar />
     </ScrollIndicatorContainer>
