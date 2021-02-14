@@ -9,7 +9,8 @@ const CursorOutline = styled.div`
   pointer-events: none;
   width: 36px;
   transition: 0.09s;
-  opacity: 0;
+  opacity: 1;
+  // TODO: VISIBILITY HIDDEN ON SMALL SCREEN SIZE
   @media (hover: none) and (pointer: coarse) {
     visibility: hidden;
   }
@@ -18,11 +19,11 @@ const CursorDot = styled.div`
   position: fixed;
   height: 3px;
   width: 3px;
-  background-color: white;
+  background: white;
   border-radius: 50%;
   top: 18px;
   left: 18px;
-  opacity: 0;
+  opacity: 1;
 `;
 
 const Cursor = () => {
@@ -49,12 +50,12 @@ const Cursor = () => {
 
   useEffect(() => {
     document.addEventListener('mousemove', handleMouseMove);
-    document.addEventListener('mouseenter', handleMouseEnter);
-    document.addEventListener('mouseleave', handleMouseLeave);
+    document.addEventListener('mouseover', handleMouseEnter);
+    document.addEventListener('mouseout', handleMouseLeave);
     return () => [
       document.removeEventListener('mousemove', handleMouseMove),
-      document.removeEventListener('mouseenter', handleMouseEnter),
-      document.removeEventListener('mouseleave', handleMouseLeave),
+      document.removeEventListener('mouseover', handleMouseEnter),
+      document.removeEventListener('mouseout', handleMouseLeave),
     ];
   }, []);
 

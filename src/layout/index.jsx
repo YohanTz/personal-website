@@ -9,20 +9,21 @@ const GlobalStyle = createGlobalStyle`
     --font-family: Rubik;
 
     // COLORS
-    --bg-color: #000;
-    --font-color: #fff;
+    --bg-color: #101010;
+    --font-color: #EFEFEF;
     --primary-color: #FFFF8B;
     --primary-selection-color: #FFFF8BC0;
+    --grey: #5A5A5A;
 
     // MARGIN
-    --margin-y: 15px;
+    --margin-y: 25px;
   }
 
   body {
     font-family: var(--font-family);
     margin: 0;
     padding: 0;
-    background-color: var(--bg-color);
+    background: var(--bg-color);
     color: var(--font-color);
   }
 
@@ -31,13 +32,13 @@ const GlobalStyle = createGlobalStyle`
   }
 
   ::selection {
-    background-color: var(--primary-selection-color);
+    background: var(--primary-selection-color);
     color: black;
   }
 `;
 
 const ChildrenContainer = styled.div`
-  margin: 0 calc(var(--margin-y) + 30px);
+  margin: 0 calc(var(--margin-y) + 50px);
   height: 100%;
 `;
 
