@@ -42,14 +42,18 @@ const ChildrenContainer = styled.div`
   height: 100%;
 `;
 
-const Layout = ({ children }) => {
+const Layout = ({ children, errorPage }) => {
   return (
     <>
       <GlobalStyle />
       <Cursor />
       <Topbar />
-      <Navbar />
-      <ScrollIndicator />
+      {!errorPage && (
+        <>
+          <Navbar />
+          <ScrollIndicator />
+        </>
+      )}
       <ChildrenContainer>{children}</ChildrenContainer>
     </>
   );
