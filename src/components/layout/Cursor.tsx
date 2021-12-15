@@ -8,7 +8,8 @@ const CursorOutline = styled.div`
   height: 60px;
   width: 60px;
   pointer-events: none;
-  transition: opacity 0.1s, transform 0.1s;
+  /* transition: opacity 0.1s, transform 0.1s; */
+  transition: opacity 0.1s ease, transform 0.1s ease;
   opacity: 1;
 
   // TODO: VISIBILITY HIDDEN ON SMALL SCREEN SIZE
@@ -18,6 +19,7 @@ const CursorOutline = styled.div`
 `;
 const CursorDot = styled.div`
   position: fixed;
+  pointer-events: none;
   height: 3px;
   width: 3px;
   background: black;

@@ -1,13 +1,13 @@
 import * as React from "react";
 
 import Cursor from "./Cursor";
-import "./index.css";
+import "./layout.css";
 
 const Layout: React.FC = ({ children }) => {
   return (
     <>
       <Cursor />
-      TEST
+      {children}
     </>
   );
 };
