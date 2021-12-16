@@ -2,9 +2,11 @@ import * as React from "react";
 import styled from "styled-components";
 
 import { nav_padding } from "../../utils/css-variables";
+import DarkmodeSwitcher from "./DarkmodeSwitcher";
 
 const NavItem = styled.div`
   position: fixed;
+  padding: ${nav_padding};
 `;
 
 type NavigationProps = {
@@ -20,6 +22,10 @@ const Navigation: React.FC<NavigationProps> = ({ setCursorState }) => {
   const clearCursorState = () => setCursorState({ text: "", position: "left" });
   return (
     <>
+      <NavItem>
+        <DarkmodeSwitcher />
+      </NavItem>
+
       <NavItem
         onMouseEnter={() =>
           setCursorState({
@@ -28,10 +34,11 @@ const Navigation: React.FC<NavigationProps> = ({ setCursorState }) => {
           })
         }
         onMouseLeave={clearCursorState}
-        style={{ top: 0, right: 0, padding: nav_padding }}
+        style={{ top: 0, right: 0 }}
       >
         about.
       </NavItem>
+
       <NavItem
         onMouseEnter={() =>
           setCursorState({
@@ -40,10 +47,11 @@ const Navigation: React.FC<NavigationProps> = ({ setCursorState }) => {
           })
         }
         onMouseLeave={clearCursorState}
-        style={{ bottom: 0, left: 0, padding: nav_padding }}
+        style={{ bottom: 0, left: 0 }}
       >
         work.
       </NavItem>
+
       <NavItem
         onMouseEnter={() =>
           setCursorState({
@@ -52,7 +60,7 @@ const Navigation: React.FC<NavigationProps> = ({ setCursorState }) => {
           })
         }
         onMouseLeave={clearCursorState}
-        style={{ bottom: 0, right: 0, padding: nav_padding }}
+        style={{ bottom: 0, right: 0 }}
       >
         contact.
       </NavItem>

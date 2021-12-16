@@ -3,15 +3,27 @@
 :root {
   --primary-font: "Roboto Mono", monospace;
   --primary-color: #ff0000;
-  --background-color: #ffffff;
   --nav-padding: 5rem;
+  --background-color: #ffffff;
+  --font-color: #000000;
   cursor: none;
+}
+
+[theme="light"] {
+  --background-color: #ffffff;
+  --font-color: #000000;
+}
+
+[theme="dark"] {
+  --background-color: #000000;
+  --font-color: #ffffff;
 }
 
 body {
   margin: 0;
   font-family: var(--primary-font);
   background: var(--background-color);
+  color: var(--font-color);
 }
 
 a {

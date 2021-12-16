@@ -1,10 +1,13 @@
 import * as React from "react";
 import styled from "styled-components";
 
+import { font_color } from "../../utils/css-variables";
+
 const CursorOutline = styled.div`
   position: fixed;
   border-radius: 50%;
-  border: 1px solid black;
+  border: 1px solid;
+  border-color: ${font_color};
   height: 60px;
   width: 60px;
   pointer-events: none;
@@ -23,7 +26,7 @@ const CursorDot = styled.div`
   pointer-events: none;
   height: 4px;
   width: 4px;
-  background: black;
+  background: ${font_color};
   border-radius: 50%;
   opacity: 1;
   transform: translate(-100px, -100px);
