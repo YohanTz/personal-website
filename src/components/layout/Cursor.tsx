@@ -21,19 +21,30 @@ const CursorOutline = styled.div`
 const CursorDot = styled.div`
   position: fixed;
   pointer-events: none;
-  height: 3px;
-  width: 3px;
+  height: 4px;
+  width: 4px;
   background: black;
   border-radius: 50%;
   opacity: 1;
   transform: translate(-100px, -100px);
 `;
 
-const Cursor = () => {
+const CursorText = styled.div`
+  position: absolute;
+  width: max-content;
+  font-weight: 600;
+  top: calc(50% - 0.5rem);
+`;
+
+type CursorProps = {
+  cursorState: { text: string; position: "left" | "right" };
+};
+
+const Cursor: React.FC<CursorProps> = ({ cursorState }) => {
   const cursorOutlineRef = React.useRef(null);
   const cursorDotRef = React.useRef(null);
 
-  const handleMouseMove = (event) => {
+  const handleMouseMove = (event: MouseEvent) => {
     const { clientX, clientY } = event;
     const cursorOutlinePositionX =
       clientX - cursorOutlineRef.current.clientWidth / 2;
@@ -53,8 +64,8 @@ const Cursor = () => {
   };
 
   const handleMouseLeave = () => {
-    cursorOutlineRef.current.style.opacity = 0;
-    cursorDotRef.current.style.opacity = 0;
+    // cursorOutlineRef.current.style.opacity = 0;
+    // cursorDotRef.current.style.opacity = 0;
   };
 
   React.useEffect(() => {
@@ -70,7 +81,11 @@ const Cursor = () => {
 
   return (
     <>
-      <CursorOutline ref={cursorOutlineRef} />
+      <CursorOutline ref={cursorOutlineRef}>
+        <CursorText style={{ [cursorState.position]: "calc(100% + 1rem)" }}>
+          {cursorState.text}
+        </CursorText>
+      </CursorOutline>
       <CursorDot ref={cursorDotRef} />
     </>
   );

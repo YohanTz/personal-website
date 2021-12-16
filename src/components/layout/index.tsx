@@ -2,11 +2,18 @@ import * as React from "react";
 
 import Cursor from "./Cursor";
 import "./layout.css";
+import Navigation from "./Navigation";
 
 const Layout: React.FC = ({ children }) => {
+  const [cursorState, setCursorState] = React.useState({
+    text: "",
+    position: "right" as "right" | "left",
+  });
+
   return (
     <>
-      <Cursor />
+      <Cursor cursorState={cursorState} />
+      <Navigation setCursorState={setCursorState} />
       {children}
     </>
   );

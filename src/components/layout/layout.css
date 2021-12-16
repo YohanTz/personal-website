@@ -1,7 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;600;700&display=swap");
+
+:root {
+  --primary-font: "Roboto Mono", monospace;
+  --primary-color: #ff0000;
+  --background-color: #ffffff;
+  --nav-padding: 5rem;
+  cursor: none;
+}
+
 body {
   margin: 0;
-  /* TODO: PUT FONT IN A VARIABLE */
-  font-family: sans-serif;
+  font-family: var(--primary-font);
+  background: var(--background-color);
 }
 
 a {
@@ -12,8 +22,7 @@ a {
 button {
   outline: none;
   border: none;
-  /* TODO: PUT FONT IN A VARIABLE */
-  font-family: "sans-serif";
+  font-family: var(--primary-font);
 }
 
 * {
