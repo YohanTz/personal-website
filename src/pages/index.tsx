@@ -31,6 +31,7 @@ const TypingText = styled.span`
 `;
 
 const IndexPage = () => {
+  // TODO: Add typing text
   return (
     <Container>
       <Paragraph>

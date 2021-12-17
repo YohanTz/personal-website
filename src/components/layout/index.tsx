@@ -6,6 +6,7 @@ import Cursor from "./Cursor";
 import Navigation from "./Navigation";
 import SocialIcons from "./SocialIcons";
 import { nav_padding } from "../../utils/css-variables";
+import SEO from "../SEO";
 
 const Container = styled.div`
   padding: calc(2 * ${nav_padding});
@@ -21,6 +22,7 @@ const Layout: React.FC = ({ children }) => {
 
   return (
     <>
+      <SEO />
       <Cursor cursorState={cursorState} />
       <Navigation setCursorState={setCursorState} />
       <SocialIcons />

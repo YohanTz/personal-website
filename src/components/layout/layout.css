@@ -3,6 +3,7 @@
 :root {
   --primary-font: "Roboto Mono", monospace;
   --primary-color: #ff0000;
+  --primary-color-selection: #ff000060;
   --nav-padding: 5rem;
   --background-color: #ffffff;
   --font-color: #000000;
@@ -49,13 +50,13 @@ button {
 
 ::-moz-selection {
   /* Code for Firefox */
-  color: white;
-  background: black;
+  color: var(--background-color);
+  background: var(--primary-color-selection);
 }
 
 ::selection {
-  color: white;
-  background: black;
+  color: var(--background-color);
+  background: var(--primary-color-selection);
 }
 
 /* Chrome, Safari, Edge, Opera */
