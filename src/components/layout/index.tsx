@@ -22,7 +22,6 @@ const Layout: React.FC = ({ children }) => {
 
   return (
     <>
-      <SEO />
       <Cursor cursorState={cursorState} />
       <Navigation setCursorState={setCursorState} />
       <SocialIcons />

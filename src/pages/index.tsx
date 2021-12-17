@@ -1,5 +1,7 @@
 import * as React from "react";
 import styled from "styled-components";
+
+import SEO from "../components/SEO";
 import { font_color, nav_padding, primary_color } from "../utils/css-variables";
 
 const Container = styled.section`
@@ -33,13 +35,16 @@ const TypingText = styled.span`
 const IndexPage = () => {
   // TODO: Add typing text
   return (
-    <Container>
-      <Paragraph>
-        Hi, It's nice to meet you !
-        <br />
-        I'm Yohan, a <TypingText>Software engineering student_</TypingText>
-      </Paragraph>
-    </Container>
+    <>
+      <SEO />
+      <Container>
+        <Paragraph>
+          Hi, It's nice to meet you !
+          <br />
+          I'm Yohan, a <TypingText>Software engineering student_</TypingText>
+        </Paragraph>
+      </Container>
+    </>
   );
 };
 
