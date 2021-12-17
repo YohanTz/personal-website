@@ -7,6 +7,7 @@ import DarkmodeSwitcher from "./DarkmodeSwitcher";
 const NavItem = styled.div`
   position: fixed;
   padding: ${nav_padding};
+  z-index: 1;
 `;
 
 type NavigationProps = {
@@ -23,7 +24,7 @@ const Navigation: React.FC<NavigationProps> = ({ setCursorState }) => {
     setCursorState({ text: null, position: "left" });
   return (
     <>
-      <NavItem>
+      <NavItem style={{ top: 0, left: 0 }}>
         <DarkmodeSwitcher />
       </NavItem>
 

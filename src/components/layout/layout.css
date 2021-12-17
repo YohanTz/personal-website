@@ -27,6 +27,11 @@ body {
   transition: background 0.2s ease, color 0.2s ease;
 }
 
+svg,
+path {
+  transition: fill 0.2s ease;
+}
+
 a {
   text-decoration: none;
   color: inherit;

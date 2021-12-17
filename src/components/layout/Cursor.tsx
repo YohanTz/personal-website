@@ -25,8 +25,8 @@ const CursorOutline = styled.div`
 const CursorDot = styled.div`
   position: fixed;
   pointer-events: none;
-  height: 4px;
-  width: 4px;
+  height: 5px;
+  width: 5px;
   background: ${font_color};
   border-radius: 50%;
   opacity: 1;

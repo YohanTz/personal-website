@@ -12,6 +12,8 @@ const DarkModeSwitcher = () => {
     [theme]
   );
 
+  // TODO: Create a toggle function
+
   return (
     <div
       style={{ height: "30px", width: "30px" }}
