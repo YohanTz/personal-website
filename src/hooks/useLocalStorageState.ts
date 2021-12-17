@@ -7,6 +7,7 @@ const useLocalStorageState = <Type>(
   defaultValue: Type
 ): ReturnType<Type> => {
   const [state, setState] = useState(() => {
+    // TODO: try catch on JSON.parse (for the previous website which didn't used JSON.parse)
     const valueInLocalStorage = window.localStorage.getItem(key);
     if (valueInLocalStorage) {
       return JSON.parse(valueInLocalStorage) as Type;
