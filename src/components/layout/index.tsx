@@ -6,7 +6,7 @@ import Navigation from "./Navigation";
 
 const Layout: React.FC = ({ children }) => {
   const [cursorState, setCursorState] = React.useState({
-    text: "",
+    text: null as null | string,
     position: "right" as "right" | "left",
   });
 

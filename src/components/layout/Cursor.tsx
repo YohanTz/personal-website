@@ -1,3 +1,4 @@
+import { AnimatePresence, motion } from "framer-motion";
 import * as React from "react";
 import styled from "styled-components";
 
@@ -15,7 +16,7 @@ const CursorOutline = styled.div`
   opacity: 1;
   transform: translate(-100px, -100px);
 
-  // TODO: VISIBILITY HIDDEN ON SMALL SCREEN SIZE
+  // TODO: VISIBILITY HIDDEN ON SMALL SCREEN SIZE ?
   @media (hover: none) and (pointer: coarse) {
     visibility: hidden;
   }
@@ -30,9 +31,14 @@ const CursorDot = styled.div`
   border-radius: 50%;
   opacity: 1;
   transform: translate(-100px, -100px);
+
+  // TODO: VISIBILITY HIDDEN ON SMALL SCREEN SIZE ?
+  @media (hover: none) and (pointer: coarse) {
+    visibility: hidden;
+  }
 `;
 
-const CursorText = styled.div`
+const CursorText = styled(motion.div)`
   position: absolute;
   width: max-content;
   font-weight: 600;
@@ -67,8 +73,8 @@ const Cursor: React.FC<CursorProps> = ({ cursorState }) => {
   };
 
   const handleMouseLeave = () => {
-    // cursorOutlineRef.current.style.opacity = 0;
-    // cursorDotRef.current.style.opacity = 0;
+    cursorOutlineRef.current.style.opacity = 0;
+    cursorDotRef.current.style.opacity = 0;
   };
 
   React.useEffect(() => {
@@ -82,12 +88,71 @@ const Cursor: React.FC<CursorProps> = ({ cursorState }) => {
     };
   }, []);
 
+  const text_position_to_variant = {
+    left: {
+      initial: {
+        translateX: "2rem",
+        opacity: 0,
+        transition: {
+          damping: 10,
+        },
+      },
+      animate: {
+        translateX: "0px",
+        opacity: 1,
+        transition: {
+          damping: 10,
+        },
+      },
+      exit: {
+        translateX: "2rem",
+        opacity: 0,
+        transition: {
+          damping: 10,
+        },
+      },
+    },
+    right: {
+      initial: {
+        translateX: "-2rem",
+        opacity: 0,
+        transition: {
+          damping: 10,
+        },
+      },
+      animate: {
+        translateX: "0px",
+        opacity: 1,
+        transition: {
+          damping: 10,
+        },
+      },
+      exit: {
+        translateX: "-2rem",
+        opacity: 0,
+        transition: {
+          damping: 10,
+        },
+      },
+    },
+  };
+
   return (
     <>
       <CursorOutline ref={cursorOutlineRef}>
-        <CursorText style={{ [cursorState.position]: "calc(100% + 1rem)" }}>
-          {cursorState.text}
-        </CursorText>
+        <AnimatePresence>
+          {cursorState.text && (
+            <CursorText
+              initial="initial"
+              animate="animate"
+              exit="exit"
+              style={{ [cursorState.position]: "calc(100% + 1rem)" }}
+              variants={text_position_to_variant[cursorState.position]}
+            >
+              {cursorState.text}
+            </CursorText>
+          )}
+        </AnimatePresence>
       </CursorOutline>
       <CursorDot ref={cursorDotRef} />
     </>

@@ -19,7 +19,8 @@ type NavigationProps = {
 };
 
 const Navigation: React.FC<NavigationProps> = ({ setCursorState }) => {
-  const clearCursorState = () => setCursorState({ text: "", position: "left" });
+  const clearCursorState = () =>
+    setCursorState({ text: null, position: "left" });
   return (
     <>
       <NavItem>
@@ -29,7 +30,8 @@ const Navigation: React.FC<NavigationProps> = ({ setCursorState }) => {
       <NavItem
         onMouseEnter={() =>
           setCursorState({
-            text: "Know more about me !",
+            // text: "Know more about me !",
+            text: "Coming soon !",
             position: "right",
           })
         }
@@ -42,7 +44,8 @@ const Navigation: React.FC<NavigationProps> = ({ setCursorState }) => {
       <NavItem
         onMouseEnter={() =>
           setCursorState({
-            text: "See my work !",
+            // text: "See my work !",
+            text: "Coming soon !",
             position: "left",
           })
         }
@@ -55,7 +58,8 @@ const Navigation: React.FC<NavigationProps> = ({ setCursorState }) => {
       <NavItem
         onMouseEnter={() =>
           setCursorState({
-            text: "Let's get in touch !",
+            // text: "Let's get in touch !",
+            text: "Coming soon !",
             position: "right",
           })
         }

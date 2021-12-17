@@ -24,6 +24,7 @@ body {
   font-family: var(--primary-font);
   background: var(--background-color);
   color: var(--font-color);
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
 a {
