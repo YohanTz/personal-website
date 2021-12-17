@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;600;700&display=swap");
+
+:root {
+  --primary-font: "Roboto Mono", monospace;
+  --primary-color: #ff0000;
+  --primary-color-selection: #ff000060;
+  --nav-padding: 5rem;
+  --background-color: #ffffff;
+  --font-color: #000000;
+  cursor: none;
+}
+
+[theme="light"] {
+  --background-color: #ffffff;
+  --font-color: #000000;
+}
+
+[theme="dark"] {
+  --background-color: #000000;
+  --font-color: #ffffff;
+}
+
+body {
+  margin: 0;
+  font-family: var(--primary-font);
+  background: var(--background-color);
+  color: var(--font-color);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+svg,
+path {
+  transition: fill 0.2s ease;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  outline: none;
+  border: none;
+  font-family: var(--primary-font);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::-moz-selection {
+  /* Code for Firefox */
+  color: var(--background-color);
+  background: var(--primary-color-selection);
+}
+
+::selection {
+  color: var(--background-color);
+  background: var(--primary-color-selection);
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
