@@ -32,8 +32,48 @@ const TypingText = styled.span`
   color: ${primary_color};
 `;
 
+const PHRASES = [
+  "Software engineering student @Epita",
+  "Software engineer @HuskyAvax",
+  "React lover",
+];
+
 const IndexPage = () => {
-  // TODO: Add typing text
+  const currentPhraseIndexRef = React.useRef(0);
+  const isDeletingRef = React.useRef(false);
+  const [currentCharacterIndex, setCurrentCharacterIndex] = React.useState(0);
+
+  // Used cause we have a closure inside of the setInterval function
+  const currentCharacterIndexRef = React.useRef(currentCharacterIndex);
+  currentCharacterIndexRef.current = currentCharacterIndex;
+
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      if (!isDeletingRef.current) {
+        if (
+          currentCharacterIndexRef.current <
+          PHRASES[currentPhraseIndexRef.current].length
+        ) {
+          setCurrentCharacterIndex((previousValue) => previousValue + 1);
+        } else {
+          isDeletingRef.current = true;
+        }
+      } else {
+        if (currentCharacterIndexRef.current > 0)
+          setCurrentCharacterIndex((previous) => previous - 1);
+        else {
+          isDeletingRef.current = false;
+          currentPhraseIndexRef.current =
+            (currentPhraseIndexRef.current + 1) % PHRASES.length;
+        }
+      }
+    }, 80);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  console.log(currentCharacterIndexRef.current);
+
   return (
     <>
       <SEO />
@@ -41,7 +81,14 @@ const IndexPage = () => {
         <Paragraph>
           Hi, It's nice to meet you !
           <br />
-          I'm Yohan, a <TypingText>Software engineering student_</TypingText>
+          I'm Yohan, a{" "}
+          <TypingText>
+            {PHRASES[currentPhraseIndexRef.current].substring(
+              0,
+              currentCharacterIndex
+            )}
+            _
+          </TypingText>
         </Paragraph>
       </Container>
     </>
