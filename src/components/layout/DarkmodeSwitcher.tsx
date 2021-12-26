@@ -16,17 +16,21 @@ const DarkModeSwitcher = () => {
     // Added because we don't want any transition on page load for the background
     const timer = setTimeout(() => {
       document.body.style.transition = "background 0.2s ease, color 0.2s ease";
-    }, 500);
+    }, 5000);
     return () => clearTimeout(timer);
   }, []);
 
-  // TODO: Create a toggle function
+  const toggle = () => {
+    if (theme === "light") {
+      setTheme("dark");
+      return;
+    }
+
+    setTheme("light");
+  };
 
   return (
-    <div
-      style={{ height: "30px", width: "30px" }}
-      onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-    >
+    <div style={{ height: "30px", width: "30px" }} onClick={toggle}>
       {theme === "light" ? <SunIcon /> : <MoonIcon />}
     </div>
   );
