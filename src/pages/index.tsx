@@ -101,7 +101,7 @@ const IndexPage = () => {
                 0,
                 currentCharacterIndex
               )}
-              _
+              <div style={{ display: "inline", color: "#858585" }}>_</div>
             </TypingText>
           </Paragraph>
         </AnimatePresence>
