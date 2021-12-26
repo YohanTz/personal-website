@@ -16,7 +16,7 @@ const DarkModeSwitcher = () => {
     // Added because we don't want any transition on page load for the background
     const timer = setTimeout(() => {
       document.body.style.transition = "background 0.2s ease, color 0.2s ease";
-    }, 200);
+    }, 500);
     return () => clearTimeout(timer);
   }, []);
 
