@@ -15,6 +15,7 @@ const CursorOutline = styled.div`
   transition: opacity 0.1s ease, transform 0.1s ease;
   opacity: 1;
   transform: translate(-100px, -100px);
+  z-index: 33;
 
   // TODO: VISIBILITY HIDDEN ON SMALL SCREEN SIZE ?
   @media (hover: none) and (pointer: coarse) {
@@ -31,6 +32,7 @@ const CursorDot = styled.div`
   border-radius: 50%;
   opacity: 1;
   transform: translate(-100px, -100px);
+  z-index: 33;
 
   // TODO: VISIBILITY HIDDEN ON SMALL SCREEN SIZE ?
   @media (hover: none) and (pointer: coarse) {
