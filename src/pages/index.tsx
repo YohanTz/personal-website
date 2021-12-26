@@ -4,7 +4,6 @@ import { AnimatePresence, motion } from "framer-motion";
 
 import SEO from "../components/SEO";
 import { font_color, nav_padding, primary_color } from "../utils/css-variables";
-import Layout from "../components/layout";
 
 const Container = styled.section`
   position: absolute;
@@ -91,24 +90,22 @@ const IndexPage = () => {
   return (
     <>
       <SEO />
-      <Layout>
-        <Container>
-          <AnimatePresence>
-            <Paragraph initial="initial" animate="animate" variants={variants}>
-              Hi, It's nice to meet you !
-              <br />
-              I'm Yohan, a{" "}
-              <TypingText>
-                {PHRASES[currentPhraseIndexRef.current].substring(
-                  0,
-                  currentCharacterIndex
-                )}
-                _
-              </TypingText>
-            </Paragraph>
-          </AnimatePresence>
-        </Container>
-      </Layout>
+      <Container>
+        <AnimatePresence>
+          <Paragraph initial="initial" animate="animate" variants={variants}>
+            Hi, It's nice to meet you !
+            <br />
+            I'm Yohan, a{" "}
+            <TypingText>
+              {PHRASES[currentPhraseIndexRef.current].substring(
+                0,
+                currentCharacterIndex
+              )}
+              _
+            </TypingText>
+          </Paragraph>
+        </AnimatePresence>
+      </Container>
     </>
   );
 };
