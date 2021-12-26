@@ -1,8 +1,10 @@
 import * as React from "react";
 import styled from "styled-components";
+import { AnimatePresence, motion } from "framer-motion";
 
 import SEO from "../components/SEO";
 import { font_color, nav_padding, primary_color } from "../utils/css-variables";
+import Layout from "../components/layout";
 
 const Container = styled.section`
   position: absolute;
@@ -12,7 +14,7 @@ const Container = styled.section`
   justify-content: center;
 `;
 
-const Paragraph = styled.p`
+const Paragraph = styled(motion.p)`
   position: relative;
   font-size: 1.5rem;
 
@@ -72,25 +74,41 @@ const IndexPage = () => {
     return () => clearInterval(interval);
   }, []);
 
-  console.log(currentCharacterIndexRef.current);
+  const variants = {
+    initial: {
+      opacity: 0,
+      translateY: "2rem",
+    },
+    animate: {
+      opacity: 1,
+      translateY: "0rem",
+      transition: {
+        duration: 1,
+      },
+    },
+  };
 
   return (
     <>
       <SEO />
-      <Container>
-        <Paragraph>
-          Hi, It's nice to meet you !
-          <br />
-          I'm Yohan, a{" "}
-          <TypingText>
-            {PHRASES[currentPhraseIndexRef.current].substring(
-              0,
-              currentCharacterIndex
-            )}
-            _
-          </TypingText>
-        </Paragraph>
-      </Container>
+      <Layout>
+        <Container>
+          <AnimatePresence>
+            <Paragraph initial="initial" animate="animate" variants={variants}>
+              Hi, It's nice to meet you !
+              <br />
+              I'm Yohan, a{" "}
+              <TypingText>
+                {PHRASES[currentPhraseIndexRef.current].substring(
+                  0,
+                  currentCharacterIndex
+                )}
+                _
+              </TypingText>
+            </Paragraph>
+          </AnimatePresence>
+        </Container>
+      </Layout>
     </>
   );
 };

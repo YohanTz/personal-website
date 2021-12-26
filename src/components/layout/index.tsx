@@ -6,7 +6,6 @@ import Cursor from "./Cursor";
 import Navigation from "./Navigation";
 import SocialIcons from "./SocialIcons";
 import { nav_padding } from "../../utils/css-variables";
-import SEO from "../SEO";
 
 const Container = styled.div`
   padding: calc(2 * ${nav_padding});
