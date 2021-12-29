@@ -4,7 +4,7 @@
   --primary-font: "Roboto Mono", monospace;
   --primary-color: #ff0000;
   --primary-color-selection: #ff000060;
-  --nav-padding: 5rem;
+  --nav-padding: min(8vw, 6rem);
   --background-color: #ffffff;
   --font-color: #000000;
   cursor: none;
