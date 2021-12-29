@@ -44,7 +44,9 @@ button {
   font-family: var(--primary-font);
 }
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 

@@ -39,6 +39,8 @@ const PHRASES = [
   "React lover",
 ];
 
+const PAUSE_DURATION = 80;
+
 const IndexPage = () => {
   const currentPhraseIndexRef = React.useRef(0);
   const isDeletingRef = React.useRef(false);
@@ -48,27 +50,39 @@ const IndexPage = () => {
   const currentCharacterIndexRef = React.useRef(currentCharacterIndex);
   currentCharacterIndexRef.current = currentCharacterIndex;
 
+  const pauseCounterRef = React.useRef(0);
+
   React.useEffect(() => {
     const interval = setInterval(() => {
+      if (pauseCounterRef.current) {
+        pauseCounterRef.current =
+          pauseCounterRef.current > PAUSE_DURATION
+            ? 0
+            : pauseCounterRef.current + 1;
+        return;
+      }
+
       if (!isDeletingRef.current) {
         if (
           currentCharacterIndexRef.current <
           PHRASES[currentPhraseIndexRef.current].length
         ) {
           setCurrentCharacterIndex((previousValue) => previousValue + 1);
-        } else {
-          isDeletingRef.current = true;
+          return;
         }
-      } else {
-        if (currentCharacterIndexRef.current > 0)
-          setCurrentCharacterIndex((previous) => previous - 1);
-        else {
-          isDeletingRef.current = false;
-          currentPhraseIndexRef.current =
-            (currentPhraseIndexRef.current + 1) % PHRASES.length;
-        }
+        isDeletingRef.current = true;
+        pauseCounterRef.current = 1;
+        return;
       }
-    }, 80);
+      if (currentCharacterIndexRef.current > 0) {
+        setCurrentCharacterIndex((previous) => previous - 1);
+        return;
+      } else {
+        isDeletingRef.current = false;
+        currentPhraseIndexRef.current =
+          (currentPhraseIndexRef.current + 1) % PHRASES.length;
+      }
+    }, 60);
 
     return () => clearInterval(interval);
   }, []);
