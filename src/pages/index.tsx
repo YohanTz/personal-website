@@ -39,7 +39,7 @@ const PHRASES = [
   "React lover",
 ];
 
-const PAUSE_DURATION = 80;
+const PAUSE_DURATION = 8;
 
 const IndexPage = () => {
   const currentPhraseIndexRef = React.useRef(0);
