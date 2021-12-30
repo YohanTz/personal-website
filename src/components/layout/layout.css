@@ -2,6 +2,7 @@
 
 :root {
   --primary-font: "Roboto Mono", monospace;
+  /* --primary-color: #64ffda; */
   --primary-color: #ff0000;
   --primary-color-selection: #ff000060;
   --nav-padding: min(8vw, 6rem);

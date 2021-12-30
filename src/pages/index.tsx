@@ -109,14 +109,16 @@ const IndexPage = () => {
           <Paragraph initial="initial" animate="animate" variants={variants}>
             Hi, It's nice to meet you !
             <br />
-            I'm Yohan, a{" "}
-            <TypingText>
-              {PHRASES[currentPhraseIndexRef.current].substring(
-                0,
-                currentCharacterIndex
-              )}
-              <div style={{ display: "inline", color: "#858585" }}>_</div>
-            </TypingText>
+            <div style={{ position: "absolute" }}>
+              I'm Yohan, a{" "}
+              <TypingText>
+                {PHRASES[currentPhraseIndexRef.current].substring(
+                  0,
+                  currentCharacterIndex
+                )}
+                <div style={{ display: "inline", color: "#858585" }}>_</div>
+              </TypingText>
+            </div>
           </Paragraph>
         </AnimatePresence>
       </Container>
